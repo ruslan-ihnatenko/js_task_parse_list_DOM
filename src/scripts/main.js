@@ -16,7 +16,12 @@ function salaryToNumber(number = '') {
 }
 
 function getEmployees(list) {
+  delete listWrapper.children;
+
   for (const el of list) {
+    const text = el.textContent;
+
+    el.setAttribute('data-name', text);
     listWrapper.appendChild(el);
   }
 }
